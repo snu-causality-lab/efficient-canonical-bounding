@@ -1,0 +1,2 @@
+n_nodes,seed,n_bidir,max_dim,budget_s,lifted_dim_analytical_L3,prop42_d_U,structural_ratio,lifted_build_wall_s,lifted_dim_actual,reduced_build_wall_s,reduced_dim,build_status,lifted_solve_wall_s,lifted_solver_time_s,lifted_peak_rss_delta_mb,reduced_solve_wall_s,reduced_solver_time_s,lifted_lb,lifted_ub,reduced_lb,reduced_ub,abs_lb_diff,abs_ub_diff,wall_speedup,rep
+4,4043,2,262144,300.0,128,1024,0.125,0.0943,128,0.0905,24,ok,1.853173,0.000368,77.62,0.008357,0.000107,0.0,0.560138,0.0,0.560138,0.0,2e-10,221.752,1

@@ -1,0 +1,2 @@
+n_nodes,seed,n_bidir,max_dim,budget_s,lifted_dim_analytical_L3,prop42_d_U,structural_ratio,build_status,rep
+8,8043,10,262144,300.0,8796093022208,64,137438953472.0,skipped_dim_cap,1

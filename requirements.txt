@@ -1,0 +1,5 @@
+numpy>=1.26
+cvxpy>=1.5
+ecos>=2.0
+scs>=3.2
+matplotlib>=3.8

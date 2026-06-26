@@ -1,0 +1,15 @@
+{
+  "sizes": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "replicates": 3,
+  "base_seed": 42,
+  "p_dir": 0.4,
+  "p_bidir": 0.3,
+  "max_lifted_dim": 16384,
+  "approach": "lazy \u03c3-quotient builder for pobs constraints"
+}

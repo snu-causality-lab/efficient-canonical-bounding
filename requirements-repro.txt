@@ -1,0 +1,13 @@
+# Exact package versions recorded in the committed stable timing metadata.
+# Intended for reproducing the paper timing tables with Python 3.11.x.
+numpy==2.4.4
+scipy==1.17.1
+cvxpy==1.8.2
+ecos==2.0.14
+scs==3.2.11
+
+# Figure rendering and release validation. Matplotlib was tested locally for
+# this release candidate; pytest is needed only for the test suite.
+matplotlib==3.10.8
+pytest==8.4.2
+pytest-cov==7.1.0

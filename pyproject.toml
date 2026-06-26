@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canonred"
+version = "0.0.1"
+description = "Canonical domain reduction for partial counterfactual identification."
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = [
+    "causal-inference",
+    "counterfactuals",
+    "partial-identification",
+    "linear-programming",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=1.26",
+    "cvxpy>=1.5",
+    "ecos>=2.0",
+    "scs>=3.2",
+    "matplotlib>=3.8",
+]
+
+[tool.setuptools]
+include-package-data = false
+
+[project.urls]
+Repository = "https://github.com/snu-causality-lab/efficient-canonical-bounding"
+Issues = "https://github.com/snu-causality-lab/efficient-canonical-bounding/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-cov>=5",
+]
+
+[tool.setuptools.packages.find]
+include = ["canonred*"]
+exclude = ["tests*", "scripts*", "rebuttal_experiments*"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["__pycache__/*", "*.pyc", "*.pyo"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-ra",
+    "-m", "not slow",
+    "--strict-markers",
+    "--strict-config",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks end-to-end integration tests",
+]

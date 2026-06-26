@@ -1,0 +1,71 @@
+{
+  "command": "run_stable.py --seed 59 --require-slurm --n-repeats 25 --out-dir results_stable",
+  "seed": 59,
+  "parameters": {
+    "seed": 59,
+    "n_warmup": 5,
+    "n_batch": 200,
+    "n_repeats": 25,
+    "warm_start": true,
+    "solver": "ECOS",
+    "max_load_per_core": 0.4,
+    "require_slurm": true,
+    "allow_busy": false,
+    "out_dir": "results_stable"
+  },
+  "preflight": {
+    "n_cpu": 48,
+    "loadavg": [
+      1.27880859375,
+      1.27392578125,
+      1.1005859375
+    ],
+    "load_per_core_1m": 0.026641845703125,
+    "slurm_job_id": "14860",
+    "busy": false
+  },
+  "provenance": {
+    "host": "redacted-node",
+    "os": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+    "arch": "x86_64",
+    "cpu": "x86_64",
+    "n_cpu": 48,
+    "python": "3.11.15",
+    "pythonhashseed": "0",
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "ACCELERATE_MAXIMUM_THREADS": "1"
+    },
+    "slurm": {
+      "SLURM_JOB_ID": "14860",
+      "SLURM_CPUS_PER_TASK": null,
+      "SLURM_JOB_NODELIST": "redacted-node"
+    },
+    "numpy_version": "2.4.4",
+    "scipy_version": "1.17.1",
+    "cvxpy_version": "1.8.2",
+    "ecos_version": "2.0.14",
+    "scs_version": "3.2.11",
+    "numpy_blas": "scipy-openblas",
+    "cpu_detail": {
+      "cpus": "48",
+      "vendor": "GenuineIntel",
+      "model_name": "Intel(R) Xeon(R) Gold 5317 CPU @ 3.00GHz",
+      "family": "6",
+      "threads_per_core": "2",
+      "cores_per_socket": "12",
+      "sockets": "2",
+      "cpu_max_mhz": "3600.0000",
+      "cpu_min_mhz": "800.0000",
+      "l1d": "1.1 MiB (24 instances)",
+      "l1i": "768 KiB (24 instances)",
+      "l2": "30 MiB (24 instances)",
+      "l3": "36 MiB (2 instances)",
+      "numa_nodes": "2"
+    }
+  }
+}

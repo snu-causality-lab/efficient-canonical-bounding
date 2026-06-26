@@ -1,0 +1,2 @@
+seed,dim_reduced,dim_lifted,n_warmup,n_batch_8,n_batch_128,n_repeats,warm_start,solver,solvers_used,host,load_per_core_1m,slurm_job,solver_med_8_ms,solver_iqr_lo_8_ms,solver_iqr_hi_8_ms,solver_med_128_ms,solver_iqr_lo_128_ms,solver_iqr_hi_128_ms,speedup,speedup_iqr_lo,speedup_iqr_hi
+58,8,128,5,200,50,25,True,ECOS,ECOS,redacted-node,0.034,14813,0.035869,0.035698,0.044207,0.340883,0.34066,0.343168,9.536,7.705,9.604

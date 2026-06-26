@@ -1,0 +1,4 @@
+fiber,dim_lifted,dim_reduced,seed,solver_med_8_ms,solver_iqr_lo_8_ms,solver_iqr_hi_8_ms,solver_med_lifted_ms,solver_iqr_lo_lifted_ms,solver_iqr_hi_lifted_ms,speedup,speedup_iqr_lo,speedup_iqr_hi,n_warmup,n_batch_8,n_batch_lifted,n_repeats,warm_start,solver,solvers_used,host,load_per_core_1m,fp_lifted_M
+16,128,8,51,0.034451,0.034351,0.042048,0.34898,0.34862,0.349516,10.121,8.297,10.168,5,200,50,25,True,ECOS,ECOS,redacted-node,0.026,3765312339857f25
+64,512,8,51,0.034451,0.034351,0.042048,2.046572,2.039131,2.049716,59.189,48.546,59.508,5,200,50,25,True,ECOS,ECOS,redacted-node,0.026,dce97f797d0683a5
+256,2048,8,51,0.034451,0.034351,0.042048,10.362457,10.340867,10.384074,299.526,247.417,301.471,5,200,20,25,True,ECOS,ECOS,redacted-node,0.026,73108541f80fef58

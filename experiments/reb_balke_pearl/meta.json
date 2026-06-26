@@ -1,0 +1,13 @@
+{
+  "graph": "IV (Z->X->Y, X<->Y)",
+  "queries": [
+    "Y_{x=0}=1",
+    "Y_{x=1}=1"
+  ],
+  "lifted_dim": 32,
+  "reduced_dim_Q0": 12,
+  "reduced_dim_Q1": 12,
+  "n_constraints": 8,
+  "K": 10,
+  "seed": 42
+}

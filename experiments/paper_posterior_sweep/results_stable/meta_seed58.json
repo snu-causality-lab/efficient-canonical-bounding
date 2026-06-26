@@ -1,0 +1,140 @@
+{
+  "command": "run_stable.py --seed 58 --require-slurm --S 10000 --burn 5000 --n-repeats 25 --out-dir results_stable",
+  "seed": 58,
+  "parameters": {
+    "seed": 58,
+    "n_grid": [
+      200,
+      500,
+      1000,
+      5000
+    ],
+    "S": 10000,
+    "burn": 5000,
+    "regimes": [
+      "I",
+      "II"
+    ],
+    "n_warmup": 5,
+    "n_batch": 200,
+    "n_batch_lifted": 50,
+    "n_repeats": 25,
+    "warm_start": true,
+    "solver": "ECOS",
+    "max_load_per_core": 0.4,
+    "require_slurm": true,
+    "allow_busy": false,
+    "out_dir": "results_stable"
+  },
+  "fingerprint": {
+    "reduced": {
+      "c_sha256": "9f259eb831d86e07",
+      "M_sha256": "d9f5b020b75b55ca",
+      "dim": 8,
+      "n_constraints": 3
+    },
+    "lifted": {
+      "c_sha256": "0d24bdf631049c0c",
+      "M_sha256": "0c30a5cc50a2fd4b",
+      "dim": 128,
+      "n_constraints": 3
+    }
+  },
+  "preflight": {
+    "n_cpu": 48,
+    "loadavg": [
+      1.62255859375,
+      1.70751953125,
+      1.2021484375
+    ],
+    "load_per_core_1m": 0.033803304036458336,
+    "slurm_job_id": "14813",
+    "busy": false
+  },
+  "provenance": {
+    "host": "redacted-node",
+    "os": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+    "arch": "x86_64",
+    "cpu": "x86_64",
+    "n_cpu": 48,
+    "python": "3.11.15",
+    "pythonhashseed": "0",
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "ACCELERATE_MAXIMUM_THREADS": "1"
+    },
+    "slurm": {
+      "SLURM_JOB_ID": "14813",
+      "SLURM_CPUS_PER_TASK": null,
+      "SLURM_JOB_NODELIST": "redacted-node"
+    },
+    "numpy_version": "2.4.4",
+    "scipy_version": "1.17.1",
+    "cvxpy_version": "1.8.2",
+    "ecos_version": "2.0.14",
+    "scs_version": "3.2.11",
+    "numpy_blas": "scipy-openblas",
+    "cpu_detail": {
+      "cpus": "48",
+      "vendor": "GenuineIntel",
+      "model_name": "Intel(R) Xeon(R) Gold 5317 CPU @ 3.00GHz",
+      "family": "6",
+      "threads_per_core": "2",
+      "cores_per_socket": "12",
+      "sockets": "2",
+      "cpu_max_mhz": "3600.0000",
+      "cpu_min_mhz": "800.0000",
+      "l1d": "1.1 MiB (24 instances)",
+      "l1i": "768 KiB (24 instances)",
+      "l2": "30 MiB (24 instances)",
+      "l3": "36 MiB (2 instances)",
+      "numa_nodes": "2"
+    }
+  },
+  "timing": {
+    "speedup_solver": {
+      "speedup": 9.536029134923979,
+      "speedup_iqr_lo": 7.704785641651097,
+      "speedup_iqr_hi": 9.604315065857376
+    },
+    "speedup_wall": {
+      "speedup": 1.2691327954600764,
+      "speedup_iqr_lo": 1.0522998447988692,
+      "speedup_iqr_hi": 1.2728076963629442
+    },
+    "reduced": {
+      "wall_med_s": 0.0018845595,
+      "wall_iqr_lo_s": 0.001882177455,
+      "wall_iqr_hi_s": 0.002269039525,
+      "solver_med_s": 3.5868525e-05,
+      "solver_iqr_lo_s": 3.5698309999999984e-05,
+      "solver_iqr_hi_s": 4.420687500000002e-05,
+      "n_warmup": 5,
+      "n_batch": 200,
+      "n_repeats": 25,
+      "pool_size": 1,
+      "solvers_used": [
+        "ECOS"
+      ]
+    },
+    "lifted": {
+      "wall_med_s": 0.0023901929600000003,
+      "wall_iqr_lo_s": 0.0023874788400000003,
+      "wall_iqr_hi_s": 0.0023964310600000003,
+      "solver_med_s": 0.0003408826,
+      "solver_iqr_lo_s": 0.00034065985999999986,
+      "solver_iqr_hi_s": 0.0003431681800000001,
+      "n_warmup": 5,
+      "n_batch": 50,
+      "n_repeats": 25,
+      "pool_size": 1,
+      "solvers_used": [
+        "ECOS"
+      ]
+    }
+  }
+}

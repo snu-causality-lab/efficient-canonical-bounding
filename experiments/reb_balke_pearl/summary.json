@@ -1,0 +1,14 @@
+{
+  "K": 10,
+  "all_lifted_eq_reduced": true,
+  "all_contain_truth": true,
+  "all_respect_joint_margin": true,
+  "median_LP_width_y_x0": 0.492721,
+  "median_manski_width_y_x0": 0.382566,
+  "median_margin_width_y_x0": 0.492721,
+  "median_LP_width_y_x1": 0.507279,
+  "median_manski_width_y_x1": 0.355729,
+  "median_margin_width_y_x1": 0.507279,
+  "median_ATE_width_bonferroni": 1.0,
+  "interpretation": "Linear LP (ours) matches joint-margin bound P(Y=1,X=x) \u2264 P(Y_{x}=1) \u2264 1-P(Y=0,X=x); Manski (1990) tight IV bound additionally enforces Z \u22a5 U_{XY} via the c-component factorisation, which is a polynomial constraint (Zhang 2022 / Duarte 2024) and is intentionally outside our paper's linear-LP framework."
+}

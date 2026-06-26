@@ -1,0 +1,3 @@
+case,query,n_nodes,d_full,d_U_prop42,d_red_sigma_quotient,d_U_equals_d_full,d_red_le_d_U,m_V
+tight,tight_Yx0_Yx1,2,8,4,4,False,True,"{'X': 0, 'Y': 2}"
+slack,slack_Yx0_Yobs,2,8,16,4,False,True,"{'X': 1, 'Y': 3}"

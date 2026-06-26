@@ -1,0 +1,2 @@
+n_nodes,seed,n_bidir,lifted_dim,reduced_dim,n_constraints,build_lifted_s,build_reduced_s,x_node,y_node,prop42_d_U,status,max_abs_lb_diff,max_abs_ub_diff,med_lifted_ms,med_reduced_ms,speedup,rep
+5,5044,2,128,32,32,0.1764,0.1672,V0,V4,2,ok,0.0,0.0,0.3911,0.1222,3.201,2

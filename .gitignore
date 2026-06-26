@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+bin/
+lib/
+lib64/
+include/
+share/
+pyvenv.cfg
+pip-selfcheck.json
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# macOS / misc
+.DS_Store
+CACHEDIR.TAG
+
+# Legacy figures dir from the old allinone_*.py pipeline
+figures/
+*.png
+*.pdf
+.coverage
+
+# NOTE: we DO commit CSVs under experiments/ (seed=42 reproducible;
+# ~3 MB total). Per-experiment meta.json is committed too.
+
+# Test / tooling caches
+.pytest_cache/
+.coverage
+scripts/outputs/

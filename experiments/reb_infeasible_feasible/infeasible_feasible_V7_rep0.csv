@@ -1,0 +1,2 @@
+n_nodes,seed,n_bidir,max_dim,budget_s,lifted_dim_analytical_L3,prop42_d_U,structural_ratio,build_status,lifted_wall_s,rep
+7,7042,7,262144,300.0,131072,1024,128.0,lifted_build_timeout,300.0001,0
