@@ -3,7 +3,7 @@
 This directory contains two kinds of experiment material:
 
 - Stable paper-release drivers and committed compact result shards.
-- Legacy/rebuttal drivers that are retained for provenance.
+- Additional reproducibility drivers and compact result shards.
 
 The stable paper numbers reported in the README come from the `run_stable.py`
 drivers and the committed `results_stable/` shards. The older `run.py` and
@@ -19,8 +19,8 @@ tables.
 | Table 4, wall speedup | `paper_posterior_sweep/run_stable.py` | `paper_posterior_sweep/results_stable/table4_wall_time_seed*.csv` |
 | Fig. 7 agreement summary | `paper_posterior_sweep/run_stable.py` | `paper_posterior_sweep/results_stable/fig7_agreement_per_n_seed*.csv` |
 | Table 5 stress scaling | `paper_stress_scaling/run_stable.py` | `paper_stress_scaling/results_stable/table5_stress_scaling_seed*.csv` |
-| Table 7 named fixtures | `reb_named_fixtures/run_stable.py` | `reb_named_fixtures/results_stable/named_fixtures_stable_seed*.csv` |
-| Fig. 8 safe-vs-query-only discrepancy | `reb_pobs/make_pobs_data.py` | `reb_pobs/pobs_discrepancy.csv` |
+| Table 7 named fixtures | `named_graphs/run_stable.py` | `named_graphs/results_stable/named_fixtures_stable_seed*.csv` |
+| Fig. 8 safe-vs-query-only discrepancy | `pobs_safe_quotient/make_pobs_data.py` | `pobs_safe_quotient/pobs_discrepancy.csv` |
 
 The large per-draw posterior shards for Figures 3, 5, and 6 are not committed.
 Regenerate them with `paper_posterior_sweep/run_stable.py` before running
@@ -55,8 +55,8 @@ python experiments/paper_posterior_sweep/run_stable.py \
   --seed 42 --allow-busy --S 10000 --burn 5000 --n-repeats 25 \
   --out-dir experiments/paper_posterior_sweep/results_stable
 
-python experiments/reb_named_fixtures/run_stable.py \
-  --seed 42 --allow-busy --n-repeats 25 --out-dir experiments/reb_named_fixtures/results_stable
+python experiments/named_graphs/run_stable.py \
+  --seed 42 --allow-busy --n-repeats 25 --out-dir experiments/named_graphs/results_stable
 ```
 
 These commands overwrite the seed-42 shards in place. Use a separate `--out-dir`
@@ -83,18 +83,18 @@ Before submitting on a new cluster, configure the scripts for your environment:
 
 Do not use the legacy per-directory `sbatch.sh` files to regenerate the stable
 paper numbers. They are retained as historical single-run launchers for older
-rebuttal experiments.
+additional experiments.
 
-## Legacy/Rebuttal Material
+## Additional Experiment Material
 
-The following directories contain rebuttal experiments and earlier development
+The following directories contain additional experiments and earlier development
 outputs:
 
-- `reb_rand_admg/`
-- `reb_infeasible_feasible/`
-- `reb_lazy_phase1/`
-- `reb_prop42_tightness/`
-- `reb_balke_pearl/`
+- `random_admg_sweep/`
+- `scalability_demo/`
+- `lazy_phase1/`
+- `prop42_tightness/`
+- `balke_pearl_iv/`
 
 Some CSVs in those directories are compact summaries; some scripts may still
 need local scheduler options. Treat them as provenance unless a paper section

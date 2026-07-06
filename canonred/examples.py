@@ -9,7 +9,7 @@ expected cardinalities will be filled in as the downstream modules land.
 from canonred.graph import ADMG, admg
 
 # ----------------------------------------------------------------------
-# NDE graph (1086 Fig. 2a): X -> W -> Y, X -> Y, X <-> W.
+# NDE graph (paper Fig. 2a): X -> W -> Y, X -> Y, X <-> W.
 # ----------------------------------------------------------------------
 
 
@@ -80,7 +80,7 @@ def bow_graph() -> ADMG:
 
 
 # ----------------------------------------------------------------------
-# PNS graph (1086 natural_bound_app Fig. confounded-mediator-pns):
+# PNS graph (paper appendix Fig. confounded-mediator-pns):
 #   X -> M -> Y, X -> Y, X <-> Y, M <-> Y.
 #
 # The direct X -> Y edge is missing from the paper's TikZ as of the submission
@@ -100,7 +100,7 @@ def pns_graph() -> ADMG:
 
 
 # ----------------------------------------------------------------------
-# Ternary-mediator NDE graph (1086 natural_bound_app Fig. iv-ternary-mediator-nde):
+# Ternary-mediator NDE graph (paper appendix Fig. iv-ternary-mediator-nde):
 #   Z -> X -> M -> Y, X -> Y, X <-> Y. M is ternary, rest are binary.
 #
 # As with pns_graph(), the paper's TikZ omits the `X -> Y` edge — same

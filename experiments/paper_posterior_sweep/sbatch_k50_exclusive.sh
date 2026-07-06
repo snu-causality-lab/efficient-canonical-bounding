@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=1086_post_K50_excl
+#SBATCH --job-name=canonred-post_K50_excl
 #SBATCH --output=slurm-%j.out
 #SBATCH --error=slurm-%j.err
 #SBATCH --exclusive

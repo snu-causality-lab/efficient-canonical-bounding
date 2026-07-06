@@ -3,7 +3,7 @@ sampling for phi on the reduced simplex; lift helpers for phi ↔ psi).
 
 Focus:
   - dirichlet_posterior(counts, alpha, S): closed-form sampler for Regime II
-    of the 1086 paper (direct multinomial query-state observations).
+    of the paper (direct multinomial query-state observations).
   - lift_phi_uniform(phi, quotient): deterministic uniform-within-fiber lift.
   - lift_phi_dirichlet(phi, quotient, alpha, rng): random Dirichlet lift
     with per-fiber Dir(alpha/|fiber|) concentrations.

@@ -172,11 +172,11 @@ def check_stable_shards(v: Validator) -> None:
         }
         v.check("Figure 7: regime/sample-size grid", grid == expected_grid)
         max_diff = max(float(r["max_abs_q_diff"]) for r in fig7)
-        v.check("Figure 7: bounds agree within 1e-4", max_diff <= 1e-4, f"max={max_diff}")
+        v.check("Figure 7: query evaluations agree within 1e-4", max_diff <= 1e-4, f"max={max_diff}")
 
     named = v.check_shards(
         "Named-fixture stable shards",
-        "reb_named_fixtures/results_stable/named_fixtures_stable_seed*.csv",
+        "named_graphs/results_stable/named_fixtures_stable_seed*.csv",
         rows_per_seed=7,
         columns=(base_timing_cols - {"dim_reduced", "dim_lifted"})
         | {
@@ -222,8 +222,8 @@ def check_stable_shards(v: Validator) -> None:
         _check_solver_provenance(v, "Named fixtures", named)
 
 
-def check_rebuttal_artifacts(v: Validator) -> None:
-    path = HERE / "reb_prop42_tightness" / "prop42_tightness.csv"
+def check_additional_experiment_artifacts(v: Validator) -> None:
+    path = HERE / "prop42_tightness" / "prop42_tightness.csv"
     rows = _load_csv(path) if path.exists() else []
     v.check("Prop 4.2 tightness CSV exists", bool(rows), str(path))
     for row in rows:
@@ -316,8 +316,8 @@ def main() -> None:
     v = Validator()
     print("== Stable release shards ==")
     check_stable_shards(v)
-    print("\n== Rebuttal artifacts ==")
-    check_rebuttal_artifacts(v)
+    print("\n== Additional experiment artifacts ==")
+    check_additional_experiment_artifacts(v)
     print("\n== Aggregation reproducibility ==")
     check_summary_reproducibility(v)
     print()

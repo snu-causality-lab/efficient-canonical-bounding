@@ -4,7 +4,7 @@ The coarsest safe quotient declares u ~ u' iff sigma(u) = sigma(u'), where
 sigma(u) = (c_u, M_{:,u}). Prop 3.1 guarantees the reduced LP on this
 quotient has the same sharp bounds as the full Omega_full LP.
 
-Critical paper checkpoints (1086 §6 Case 1 / Case 2, NDE running example):
+Critical paper checkpoints (paper §6 Case 1 / Case 2, NDE running example):
   - (NDE, Y_{0,W_1}, L2.5 marginals) → reduced_dim = 8
   - (NDE, Y_{0,W_1}, P_obs)          → reduced_dim = 64
 """
@@ -154,7 +154,7 @@ def test_quotient_constraint_matrix_shape(bow):
 
 @pytest.mark.slow
 def test_nde_l25_reduced_dim_is_8(nde, nde_l25_query, nde_l25_marginals):
-    """1086 §6 Case 2: L_{2.5} marginals reduce NDE 128 -> 8 states."""
+    """paper §6 Case 2: L_{2.5} marginals reduce NDE 128 -> 8 states."""
     q = build_signature_quotient(nde, nde_l25_query, constraints=nde_l25_marginals)
     assert q.lifted_dim == 128
     assert q.reduced_dim == 8

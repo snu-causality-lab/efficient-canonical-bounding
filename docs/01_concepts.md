@@ -1,6 +1,6 @@
 # Concept Specification — Canonical Reduction for Partial CF Identification
 
-Target paper: "Canonical Domain Reduction for Partial Counterfactual Identification" (UAI 2026 submission 1086). Supporting references: Zhang-Tian-Bareinboim 2022 (ZTB22), Balke-Pearl 1994 (BP94), Yang-Bareinboim 2025 (YB25), Tian-Pearl 2002.
+Target paper: "Canonical Domain Reduction for Partial Counterfactual Identification" (UAI 2026 paper). Supporting references: Zhang-Tian-Bareinboim 2022 (ZTB22), Balke-Pearl 1994 (BP94), Yang-Bareinboim 2025 (YB25), Tian-Pearl 2002.
 
 This doc fixes the precise objects and semantics we implement. Every code module in `canonred/` refers back here.
 
@@ -20,7 +20,7 @@ where:
 - $\mathbf{E}_\rightarrow \subseteq \mathbf{V} \times \mathbf{V}$: directed edges. The subgraph $(\mathbf{V}, \mathbf{E}_\rightarrow)$ is a DAG.
 - $\mathbf{E}_\leftrightarrow$: bidirected edges, i.e., a set of unordered pairs $\{V_i, V_j\}$ with $i \neq j$. Semantically, each bidirected edge encodes an unobserved common cause.
 
-**Notation**. We use lower-case $\mathrm{pa}(V) = \{p : (p \to V) \in \mathbf{E}_\rightarrow\}$ for the (strict) parent set. The 1086 paper sometimes writes $\mathrm{Pa}(V) = \mathrm{pa}(V) \cup \{V\}$ — in code we stick to strict parents and flag this in docstrings. $\mathrm{ch}(V)$, $\mathrm{an}(V)$, $\mathrm{de}(V)$ are children, ancestors (excl. $V$), descendants (excl. $V$). $\mathrm{An}(\mathbf{Y}) := \mathbf{Y} \cup \bigcup_{V\in \mathbf{Y}} \mathrm{an}(V)$ is the **inclusive** ancestor set.
+**Notation**. We use lower-case $\mathrm{pa}(V) = \{p : (p \to V) \in \mathbf{E}_\rightarrow\}$ for the (strict) parent set. The paper sometimes writes $\mathrm{Pa}(V) = \mathrm{pa}(V) \cup \{V\}$ — in code we stick to strict parents and flag this in docstrings. $\mathrm{ch}(V)$, $\mathrm{an}(V)$, $\mathrm{de}(V)$ are children, ancestors (excl. $V$), descendants (excl. $V$). $\mathrm{An}(\mathbf{Y}) := \mathbf{Y} \cup \bigcup_{V\in \mathbf{Y}} \mathrm{an}(V)$ is the **inclusive** ancestor set.
 
 **C-component**. A c-component $\mathbf{C} \subseteq \mathbf{V}$ is a maximal connected component of $(\mathbf{V}, \mathbf{E}_\leftrightarrow)$'s transitive closure. Equivalence classes $\{\mathbf{C}_1, \ldots, \mathbf{C}_k\}$ partition $\mathbf{V}$.
 
@@ -110,7 +110,7 @@ For any $\mathcal{L}_{2.5}$-realizable query $\mathcal{Q}$:
 - For each intervened node $X$, for each distinct label $w \in \mathcal{L}(\mathcal{Q})$ that intervenes on $X$, create a split copy $X^{(w)}$ with value fixed to $w(X)$.
 - Redirect each edge $(X \to V)$ with label $\sigma(X \to V) = w$ to $(X^{(w)} \to V)$.
 
-The resulting graph $\mathcal{G}^\star$ has no free $X$-variable (all are split-fixed). The query now lives on a pure response-function space and is a *plain* do-intervention on $\mathcal{G}^\star$. This is exactly the "realizable NDE graph" in 1086 Fig. 2b.
+The resulting graph $\mathcal{G}^\star$ has no free $X$-variable (all are split-fixed). The query now lives on a pure response-function space and is a *plain* do-intervention on $\mathcal{G}^\star$. This is exactly the "realizable NDE graph" in paper Fig. 2b.
 
 **Conflict-freeness** = the edge-split operation produces a well-defined labeling (no edge is simultaneously assigned two incompatible labels).
 
@@ -126,13 +126,13 @@ $$
 
 where each $\underline{V}_i = (V_i, \sigma_i)$ is a CFVar and $v_i^* \in \Omega_{V_i}$ is a target value.
 
-For partial ID we typically have $\mathcal{Q}$ = a single joint probability. The 1086 NDE running example is $\mathcal{Q} = P(\underline{Y} = 1)$ with $\underline{Y} = Y_{0, W_1}$.
+For partial ID we typically have $\mathcal{Q}$ = a single joint probability. The paper NDE running example is $\mathcal{Q} = P(\underline{Y} = 1)$ with $\underline{Y} = Y_{0, W_1}$.
 
 ---
 
 ## 5. Canonical SCM and response-function space
 
-Following BP94, ZTB22 Def. 2.3, and 1086 Def. 2.2:
+Following BP94, ZTB22 Def. 2.3, and paper Def. 2.2:
 
 ### 5.1 Per-node response functions
 
@@ -152,7 +152,7 @@ $$
 \Omega_{\mathrm{full}} := \prod_{V \in \mathbf{V}} \mathcal{F}_V.
 $$
 
-Each state $u = (f_V)_{V \in \mathbf{V}}$ is a tuple of response functions. $|\Omega_{\mathrm{full}}| = \prod_V d_V^{\prod_p d_p}$ is the **$\mathcal{L}_3$ cardinality** (1086 Sec. 4.1).
+Each state $u = (f_V)_{V \in \mathbf{V}}$ is a tuple of response functions. $|\Omega_{\mathrm{full}}| = \prod_V d_V^{\prod_p d_p}$ is the **$\mathcal{L}_3$ cardinality** (paper Sec. 4.1).
 
 ### 5.3 Canonical distribution $\psi$
 
@@ -162,7 +162,7 @@ Relationship to c-components: in the canonical SCM with one exogenous per c-cliq
 
 ### 5.4 L₁, L₂, L₃ sufficient cardinalities
 
-Layer-by-layer sufficient exogenous cardinalities (1086 §2 / Appendix A.7–A.10):
+Layer-by-layer sufficient exogenous cardinalities (paper §2 / Appendix A.7–A.10):
 
 | Layer | Formula | Interpretation |
 |---|---|---|
@@ -194,7 +194,7 @@ def eval_cfvar(u, cfvar, G_star):
     return val[cfvar.base_node_in_G_star]
 ```
 
-The key correctness property: for the original NDE query $Y_{0, W_1}$ on the binary NDE graph, this returns exactly the 8-state reduced evaluation that 1086 Eq. (3) specifies: $Y_{0, W_1}(u) = (1 - a)b + ac$ with $a = W_1(u) = f_W(1, u_W)$, $b = Y_{0,0}(u) = f_Y(0, 0, u_Y)$, $c = Y_{0,1}(u) = f_Y(0, 1, u_Y)$.
+The key correctness property: for the original NDE query $Y_{0, W_1}$ on the binary NDE graph, this returns exactly the 8-state reduced evaluation that paper Eq. (3) specifies: $Y_{0, W_1}(u) = (1 - a)b + ac$ with $a = W_1(u) = f_W(1, u_W)$, $b = Y_{0,0}(u) = f_Y(0, 0, u_Y)$, $c = Y_{0,1}(u) = f_Y(0, 1, u_Y)$.
 
 ---
 
@@ -205,7 +205,7 @@ For a given query $\mathcal{Q}$ we pair it with an **information set** $\mathcal
 - **$P_{\mathrm{obs}}$ regime** ($\mathcal{I} = P_{\mathrm{obs}}(\mathbf{V})$). For each observable cell $\mathbf{v} \in \Omega_{\mathbf{V}}$, the row
 $$M_{\mathbf{v}, u} = \mathds{1}\{V(u) = v_V \ \forall V \in \mathbf{V}\}$$
 where $V(u) := \mathrm{eval}\_\mathrm{cfvar}(u, \mathrm{CFVar}(V, \sigma_\emptyset))$ is the observational evaluation.
-- **$\mathcal{L}_{2.5}$ marginal regime** (the 1086 running example). $\mathcal{I} = \{P(W_1), P(Y_{00}), P(Y_{01})\}$. Each marginal is the expectation over $\psi$ of the CFVar indicator.
+- **$\mathcal{L}_{2.5}$ marginal regime** (the paper running example). $\mathcal{I} = \{P(W_1), P(Y_{00}), P(Y_{01})\}$. Each marginal is the expectation over $\psi$ of the CFVar indicator.
 - **Mixed / multi-world experimental data**: combinations of observational and interventional moments (e.g., ZTB22 polynomial-program formulation).
 
 Each element of $\mathcal{I}$ gives one linear equality $M_i \psi = p_i$ (plus simplex $\mathbf{1}^\top \psi = 1$).
@@ -234,7 +234,7 @@ $$
 \exists\ \tilde c, \tilde M\ :\ c = \Pi^\top \tilde c\ \land\ M = \tilde M \Pi.
 $$
 
-Under this condition, the LPs on $(\Omega_{\mathrm{full}}, c, M)$ and on $(\Omega_{\mathrm{red}}, \tilde c, \tilde M)$ have identical optimal values (1086 Prop. 3.1, proof in Appendix E).
+Under this condition, the LPs on $(\Omega_{\mathrm{full}}, c, M)$ and on $(\Omega_{\mathrm{red}}, \tilde c, \tilde M)$ have identical optimal values (paper Prop. 3.1, proof in Appendix E).
 
 ### 9.1 Coarsest safe quotient
 

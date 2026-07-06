@@ -1,6 +1,6 @@
 """Context multiplicity m_V(Q) and Prop. 4.2 cardinality.
 
-See docs/01_concepts.md §10 and 1086 §4.1–4.2.
+See docs/01_concepts.md §10 and paper §4.1–4.2.
 
   m_V(Q) = |S_V(Q)| = # distinct labeled parent-world contexts at which
                        f_V is invoked in the structural expansion of Q.
@@ -10,7 +10,7 @@ Prop. 4.2 (realizable mixed-world queries):
   d_U(Q)  =  prod_{V in C(U)}  d_V ^ m_V(Q),
 
 with the product over c-components C of the ancestor-subgraph G[An(Q)].
-(See docs/02_ambiguities.md §A.4 for why this uses the original c-components
+(See docs/01_concepts.md §A.4 for why this uses the original c-components
 restricted to ancestors, not the post-do mutilated subgraph.)
 
 PCH worst-case cardinalities (analytic, query-independent):

@@ -1,6 +1,6 @@
 """Posterior sampling on phi (reduced simplex) and lifts to psi (Omega_full).
 
-See docs/01_concepts.md §5.3 and 1086 App. `app:posterior` / Fig 1.
+See docs/01_concepts.md §5.3 and paper App. `app:posterior` / Fig 1.
 
 Scope:
   - `dirichlet_posterior(counts, alpha, S, seed)`: closed-form Dirichlet
@@ -102,7 +102,7 @@ def lift_phi_dirichlet(
         frac ~ Dirichlet(alpha / |F_t|, ..., alpha / |F_t|)   length |F_t|
         psi[i] = phi[t] * frac[idx of i within F_t]
 
-    This matches the prior consistency used in the legacy NDE code: psi drawn
+    This matches the prior consistency used in the earlier NDE code: psi drawn
     from `Dir(alpha_0, ..., alpha_0)` with `alpha_0 = alpha / fiber` aggregates
     to phi ~ `Dir(alpha, ..., alpha)` (sum of Dirichlets).
     """
@@ -167,7 +167,7 @@ def binomial_marginal_gibbs(
 
     Notes
     -----
-    This generalises the legacy 8-state NDE sampler (`posterior_gibbs_8state`)
+    This generalises the earlier 8-state NDE sampler (`posterior_gibbs_8state`)
     to any (quotient, binary-indicator constraints). Each Gibbs iteration:
 
       1. For each constraint i, split its K_i successes across classes

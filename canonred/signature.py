@@ -1,6 +1,6 @@
 """Coarsest safe quotient via (c_u, M_{:,u}) signature (Prop 3.1).
 
-See docs/01_concepts.md §9 and 1086 Prop 3.1 / Alg. 1 Phase 3.
+See docs/01_concepts.md §9 and paper Prop. 3.1 / Alg. 1 Phase 3.
 
 Given an ADMG G, a CFQuery Q (defining the linear objective c), and a list
 of MomentConstraints (defining M), we compute the coarsest equivalence

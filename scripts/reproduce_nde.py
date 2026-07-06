@@ -1,4 +1,4 @@
-"""Reproduce the 1086 NDE L_{2.5} running example end-to-end.
+"""Reproduce the paper NDE L_{2.5} running example end-to-end.
 
 This script is the canonred analog of the legacy
 `allinone_posterior_visuals_cached.py`. It reproduces:

@@ -47,7 +47,7 @@ dev = [
 
 [tool.setuptools.packages.find]
 include = ["canonred*"]
-exclude = ["tests*", "scripts*", "rebuttal_experiments*"]
+exclude = ["tests*", "scripts*"]
 
 [tool.setuptools.exclude-package-data]
 "*" = ["__pycache__/*", "*.pyc", "*.pyo"]

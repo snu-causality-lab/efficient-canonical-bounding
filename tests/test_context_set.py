@@ -2,7 +2,7 @@
 
 m_V(Q) = |S_V(Q)|; Prop 4.2 cardinality d_U(Q) = prod_V d_V^{m_V(Q)}.
 
-All numbers are from 1086 §4.2, §4.1, and the natural_bound_app.
+All numbers are from paper §4.2, §4.1, and the natural_bound_app.
 """
 
 import pytest
@@ -69,7 +69,7 @@ def pns_q(pns):
 
 
 def test_m_V_nde_l25(nde, nde_l25):
-    """1086 §4.2: for Y_{0, W_1} on NDE, m_X=0, m_W=1, m_Y=2."""
+    """paper §4.2: for Y_{0, W_1} on NDE, m_X=0, m_W=1, m_Y=2."""
     assert m_V(nde, nde_l25, "X") == 0
     assert m_V(nde, nde_l25, "W") == 1
     assert m_V(nde, nde_l25, "Y") == 2
@@ -98,7 +98,7 @@ def test_context_multiplicities_returns_dict(nde, nde_l25):
 
 
 def test_prop42_nde_l25_equals_8(nde, nde_l25):
-    """1086 §6 Case 2 + §4.2: d_U(Y_{0,W_1}) = 2^0 × 2^1 × 2^2 = 8."""
+    """paper §6 Case 2 + §4.2: d_U(Y_{0,W_1}) = 2^0 × 2^1 × 2^2 = 8."""
     assert prop42_cardinality(nde, nde_l25) == 8
 
 

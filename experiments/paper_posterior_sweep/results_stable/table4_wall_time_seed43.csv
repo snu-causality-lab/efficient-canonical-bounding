@@ -1,2 +1,2 @@
 seed,dim_reduced,dim_lifted,n_warmup,n_batch_8,n_batch_128,n_repeats,warm_start,solver,solvers_used,host,load_per_core_1m,slurm_job,wall_med_8_ms,wall_iqr_lo_8_ms,wall_iqr_hi_8_ms,wall_med_128_ms,wall_iqr_lo_128_ms,wall_iqr_hi_128_ms,speedup_wall,speedup_wall_iqr_lo,speedup_wall_iqr_hi
-43,8,128,5,200,50,25,True,ECOS,ECOS,redacted-node,0.026,14798,1.902441,1.898533,2.298134,2.391776,2.390306,2.394872,1.257,1.041,1.26
+43,8,128,5,200,50,25,True,ECOS,ECOS,redacted-node,0.026,redacted,1.902441,1.898533,2.298134,2.391776,2.390306,2.394872,1.257,1.041,1.26

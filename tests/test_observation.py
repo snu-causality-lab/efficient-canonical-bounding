@@ -135,7 +135,7 @@ def test_l25_marginal_single_cfvar(bow):
 
 
 def test_l25_marginal_nde_running(nde):
-    """1086 running example: marginals of W_1, Y_{0,0}, Y_{0,1}, each =1."""
+    """paper running example: marginals of W_1, Y_{0,0}, Y_{0,1}, each =1."""
     w1 = World.from_dict("x1", {"X": 1})
     w00 = World.from_dict("x0", {"X": 0})
     # Build CFVars for W_1, Y_{0,0}, Y_{0,1}.

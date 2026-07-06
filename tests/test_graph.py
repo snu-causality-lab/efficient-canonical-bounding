@@ -1,7 +1,7 @@
 """Unit tests for canonred.graph.
 
 All expected values here are either (a) easy hand checks, or (b) directly from
-the 1086 paper (see docstrings per test).
+the paper (see docstrings per test).
 """
 
 import pytest
@@ -67,7 +67,7 @@ def test_extra_cardinality_key_error():
 
 
 # ----------------------------------------------------------------------
-# NDE graph (1086 Fig. 2a)
+# NDE graph (paper Fig. 2a)
 # ----------------------------------------------------------------------
 
 
@@ -261,7 +261,7 @@ def test_pns_lifted_size():
 def test_ternary_nde_structure():
     g = ternary_nde_graph()
     assert g.cardinality["M"] == 3
-    # With X->Y edge (added 2026-04-25 per paper-intended table numbers), Y has
+    # With X->Y edge (added 2026-04-25 per paper table numbers), Y has
     # both X and M as parents.
     assert set(g.parents("Y")) == {"X", "M"}
 
@@ -274,7 +274,7 @@ def test_ternary_nde_c_components():
 
 
 def test_ternary_nde_response_counts():
-    """Per-node response function counts with paper-intended X->Y edge.
+    """Per-node response function counts with paper X->Y edge.
 
     Z: no parents -> 2
     X: 1 parent (Z, binary) -> 2^2 = 4

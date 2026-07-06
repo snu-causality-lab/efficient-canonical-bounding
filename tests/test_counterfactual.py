@@ -114,7 +114,7 @@ def test_cfvar_standard_on_iv_graph(iv, world_x1):
 
 
 def test_cfvar_nested_nde_y_0_w1(nde, world_x0, world_x1):
-    """1086 running example: Y_{0, W_1}.
+    """paper running example: Y_{0, W_1}.
 
     edges in An(Y):
       (X, W): world x1  (because W's parent X is evaluated in world x1, W=W_1)
