@@ -166,7 +166,7 @@ Layer-by-layer sufficient exogenous cardinalities (paper §2 / Appendix A.7–A.
 
 | Layer | Formula | Interpretation |
 |---|---|---|
-| $\mathcal{L}_1$ (obs) | $d_U = \prod_{V \in \mathrm{pa}(\mathbf{C}(U))} d_V$ | product over "boundary" parent domains of the c-component |
+| $\mathcal{L}_1$ (obs) | $d_U = \prod_{V \in \mathbf{C}(U) \cup \mathrm{pa}(\mathbf{C}(U))} d_V$ | product over the c-component variables and their directed-parent domains |
 | $\mathcal{L}_2$ (single intv) | $d_U = \prod_{V \in \mathbf{C}(U)} d_V \cdot \prod_p d_p$ | product over input-output pairs |
 | $\mathcal{L}_3$ (CF) | $d_U = \prod_{V \in \mathbf{C}(U)} d_V^{\prod_p d_p}$ | product over *functions* |
 

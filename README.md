@@ -114,7 +114,7 @@ This reproduces:
 | Table 3, solver time | 8-state vs 128-state speedup: `9.42x [9.38, 9.48]` |
 | Table 4, wall time | end-to-end wall-clock speedup: `1.27x` |
 | Table 5, stress scaling | `10.1x / 58.6x / 300.6x` |
-| Table 7, named graphs | PNS `128 -> 12`: `6.89x`; ternary NDE `4608 -> 48`: `118.6x` |
+| Table 7, named graphs | PNS `128 -> 12`: `6.89x`; ternary NDE `4608 -> 48`: `118.5x` |
 
 `experiments/validate.py` is the stricter release gate. It checks the raw shard
 schemas, seed grids, expected dimensions/fixtures, ECOS-only solver provenance,
@@ -203,3 +203,4 @@ tests/               pytest suite
 ## License
 
 This repository is released under the MIT License. See `LICENSE`.
+Runtime and reproduction dependencies retain their upstream licenses.

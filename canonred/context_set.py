@@ -15,7 +15,8 @@ restricted to ancestors, not the post-do mutilated subgraph.)
 
 PCH worst-case cardinalities (analytic, query-independent):
 
-  L_1:  d_U = prod_{V in Pa(C(U))} d_V     [parents of c-component]
+  L_1:  d_U = prod_{V in C(U) union Pa(C(U))} d_V
+            [c-component variables and their directed parents]
   L_2:  d_U = prod_{V in C(U)} d_{Pa(V) × V}   = prod_{V in C(U)} d_V * prod_p d_p
   L_3:  d_U = prod_{V in C(U)} d_V ^ |Omega_{Pa(V)}|    (response-function count)
 """
@@ -79,12 +80,12 @@ def _layer_component_count(
     G: ADMG, C: frozenset[VarName], layer: Literal["L1", "L2", "L3"]
 ) -> int:
     if layer == "L1":
-        # pa(C) = { parents of C \ C }
+        # Paper examples use the closed directed-parent domain C union pa(C).
         pa_of_C: set[VarName] = set()
         for v in C:
             pa_of_C.update(G.parents(v))
-        boundary = pa_of_C.difference(C)
-        return prod(G.cardinality[p] for p in boundary) if boundary else 1
+        domain = set(C) | pa_of_C
+        return prod(G.cardinality[p] for p in domain)
     if layer == "L2":
         # d_V × prod_p d_p  for each V in C
         block = 1

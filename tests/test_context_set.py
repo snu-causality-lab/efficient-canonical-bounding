@@ -201,25 +201,14 @@ def test_pch_L3_iv(iv):
 
 
 def test_pch_L1_nde(nde):
-    """L_1 count on NDE = prod over c-components C of prod over V in pa(C) of d_V.
+    """L_1 count on NDE uses closed parent domains C union pa(C).
 
     c-components of NDE: {X, W} and {Y}.
-    pa(C_1) = pa({X,W}) \\ {X,W} = {} (X has no parents, W's parent X is in C_1).
-      But convention: pa(C) counts parents of C that are NOT in C themselves.
-      Here X has no parents. W's parent X is inside C_1. So pa(C_1) = {}.
-      d_{U_1} for L_1 = prod over V in pa(C_1) of d_V = empty product = 1.
-      Hmm this gives 1, but observational canonical is known to be non-trivial.
-
-    Let me re-read the paper §2 carefully:
-      L_1: d_U = prod_{V in Pa(C(U))} |Omega_V|
-    where Pa(C(U)) is the set of parents of C(U) (outside C(U)).
-
-    For NDE:
-      C_1 = {X, W}: Pa(C_1) = (pa(X) ∪ pa(W)) \\ C_1 = {} ∪ {X} \\ {X,W} = {} → d_{U_1}=1
-      C_2 = {Y}: pa(Y) = {X, W}; \\ {Y} = {X, W} → d_{U_2}=4
-    Total L_1 = 1 × 4 = 4.
+      C_1 = {X, W}: C_1 union pa(C_1) = {X, W} -> d_{U_1}=4.
+      C_2 = {Y}: C_2 union pa(C_2) = {X, W, Y} -> d_{U_2}=8.
+    Total L_1 = 4 × 8 = 32.
     """
-    assert pch_cardinality(nde, layer="L1") == 4
+    assert pch_cardinality(nde, layer="L1") == 32
 
 
 def test_pch_L2_nde(nde):

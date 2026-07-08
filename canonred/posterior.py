@@ -1,6 +1,6 @@
 """Posterior sampling on phi (reduced simplex) and lifts to psi (Omega_full).
 
-See docs/01_concepts.md §5.3 and paper App. `app:posterior` / Fig 1.
+See docs/01_concepts.md §5.3 and paper App. `app:posterior`.
 
 Scope:
   - `dirichlet_posterior(counts, alpha, S, seed)`: closed-form Dirichlet
