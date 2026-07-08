@@ -151,10 +151,9 @@ def test_iv_c_components():
 
 
 def test_iv_lifted_size():
-    """|Omega_full| for binary IV = 2^1 * 2^2 * 2^4 = 128 (same count as NDE)."""
+    """|Omega_full| for binary IV = 2^1 * 2^2 * 2^2 = 32."""
     g = iv_graph()
-    # Z: 2, X (parent Z): 4, Y (parent X): 4 -> 32. Hmm but paper says differently?
-    # Careful: response-fn count uses pa(V) only, not PA. X has 1 parent Z -> 2^2=4.
+    # Z has no parents -> 2. X has 1 parent Z -> 2^2=4.
     # Y has 1 parent X -> 2^2=4. Total 2*4*4=32.
     assert g.lifted_canonical_size() == 32
 

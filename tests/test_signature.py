@@ -6,7 +6,8 @@ quotient has the same sharp bounds as the full Omega_full LP.
 
 Critical paper checkpoints (paper §6 Case 1 / Case 2, NDE running example):
   - (NDE, Y_{0,W_1}, L2.5 marginals) → reduced_dim = 8
-  - (NDE, Y_{0,W_1}, P_obs)          → reduced_dim = 64
+  - (NDE, Y_{0,W_1}, P_obs)          → coarsest reduced_dim = 16
+    (the paper's 64-state construction is a non-coarsest structural reduction)
 """
 
 import pytest

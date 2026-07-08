@@ -24,7 +24,7 @@ where:
 
 **C-component**. A c-component $\mathbf{C} \subseteq \mathbf{V}$ is a maximal connected component of $(\mathbf{V}, \mathbf{E}_\leftrightarrow)$'s transitive closure. Equivalence classes $\{\mathbf{C}_1, \ldots, \mathbf{C}_k\}$ partition $\mathbf{V}$.
 
-**C-clique** (appendix Def. A.2): a c-component such that every pair is joined by *a direct bidirected edge* (i.e., the bidirected subgraph induced on $\mathbf{K}$ is complete). Every c-clique is a c-component, but not vice versa. Example (Non-IV, Fig. 2 in §3): $\mathbf{V}=\{X,Y,Z\}$ is one c-component; $\{X,Y\}$ and $\{Z,Y\}$ are c-cliques.
+**C-clique** (appendix Def. A.2): a c-component such that every pair is joined by *a direct bidirected edge* (i.e., the bidirected subgraph induced on $\mathbf{K}$ is complete). Every c-clique is a c-component, but not vice versa. Example (Non-IV graph): $\mathbf{V}=\{X,Y,Z\}$ is one c-component; $\{X,Y\}$ and $\{Z,Y\}$ are c-cliques.
 
 **Subgraphs and operations**:
 
@@ -194,7 +194,7 @@ def eval_cfvar(u, cfvar, G_star):
     return val[cfvar.base_node_in_G_star]
 ```
 
-The key correctness property: for the original NDE query $Y_{0, W_1}$ on the binary NDE graph, this returns exactly the 8-state reduced evaluation that paper Eq. (3) specifies: $Y_{0, W_1}(u) = (1 - a)b + ac$ with $a = W_1(u) = f_W(1, u_W)$, $b = Y_{0,0}(u) = f_Y(0, 0, u_Y)$, $c = Y_{0,1}(u) = f_Y(0, 1, u_Y)$.
+The key correctness property: for the original NDE query $Y_{0, W_1}$ on the binary NDE graph, this returns exactly the 8-state reduced evaluation used in the paper: $Y_{0, W_1}(u) = (1 - a)b + ac$ with $a = W_1(u) = f_W(1, u_W)$, $b = Y_{0,0}(u) = f_Y(0, 0, u_Y)$, $c = Y_{0,1}(u) = f_Y(0, 1, u_Y)$.
 
 ---
 
