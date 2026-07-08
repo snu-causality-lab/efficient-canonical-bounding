@@ -9,8 +9,9 @@ Both return ``LPCoefficients(c, M, row_labels)`` with:
 
   min/max  c^T psi   s.t.   M psi = p,   sum(psi) = 1,   psi >= 0.
 
-Solved with CVXPY (ECOS primary, SCS backup). The ``CachedSharpLP`` class
-wraps the problem in ``cp.Parameter`` so repeated p-sweeps reuse compilation.
+Solved with CVXPY (CLARABEL primary, SCS backup). Paper timing scripts pass
+ECOS explicitly for reproducibility. The ``CachedSharpLP`` class wraps the
+problem in ``cp.Parameter`` so repeated p-sweeps reuse compilation.
 """
 
 import time
@@ -129,7 +130,7 @@ def solve_sharp_bounds(
     coef: LPCoefficients,
     p: np.ndarray,
     *,
-    solver: str = "ECOS",
+    solver: str = "CLARABEL",
     backup: str = "SCS",
 ) -> tuple[float, float, dict]:
     """Return (lower, upper, diagnostics)."""
@@ -156,7 +157,7 @@ def solve_sharp_bounds(
 class CachedSharpLP:
     """Repeatedly solve sharp bounds with varying p. Caches CVXPY compilation."""
 
-    def __init__(self, coef: LPCoefficients, *, solver: str = "ECOS", backup: str = "SCS",
+    def __init__(self, coef: LPCoefficients, *, solver: str = "CLARABEL", backup: str = "SCS",
                  solver_opts: dict | None = None, strict: bool = False) -> None:
         import cvxpy as cp
 

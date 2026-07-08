@@ -48,6 +48,10 @@ IQRs, ranges, and seed counts from the raw shards.
 Use one seed locally to make sure the drivers run in your environment:
 
 ```bash
+pip install -e ".[repro]"
+```
+
+```bash
 python experiments/paper_stress_scaling/run_stable.py \
   --seed 42 --allow-busy --n-repeats 25 --out-dir experiments/paper_stress_scaling/results_stable
 
@@ -66,6 +70,8 @@ if you want to keep the committed shards untouched while testing.
 
 The committed timing tables were generated with seeds 42 through 61 under Slurm,
 single-threaded, exclusive-node timing, strict ECOS, and `--n-repeats 25`.
+Install the optional `repro` extra, or use `requirements-repro.txt`, before
+regenerating these timing artifacts.
 
 Templates:
 

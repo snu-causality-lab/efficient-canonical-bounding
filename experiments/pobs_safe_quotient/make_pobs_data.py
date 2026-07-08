@@ -54,9 +54,9 @@ def main() -> None:
     coef_r8 = build_lp_reduced(build_signature_quotient(G, Q, cs_marg))   # query-only
     print(f"[pobs] dims: full={coef_l128.dim} safe={coef_r16.dim} query-only={coef_r8.dim}", flush=True)
 
-    c128 = CachedSharpLP(coef_l128, solver_opts=ECOS_OPTS, strict=True)
-    c16 = CachedSharpLP(coef_r16, solver_opts=ECOS_OPTS, strict=True)
-    c8 = CachedSharpLP(coef_r8, solver_opts=ECOS_OPTS, strict=True)
+    c128 = CachedSharpLP(coef_l128, solver="ECOS", solver_opts=ECOS_OPTS, strict=True)
+    c16 = CachedSharpLP(coef_r16, solver="ECOS", solver_opts=ECOS_OPTS, strict=True)
+    c8 = CachedSharpLP(coef_r8, solver="ECOS", solver_opts=ECOS_OPTS, strict=True)
 
     rng = np.random.default_rng(args.seed)
     rows = []

@@ -98,8 +98,8 @@ def test_solve_sharp_bounds_reduced_matches_closed_form(nde, nde_l25_query, nde_
 
     lb, ub, _ = solve_sharp_bounds(coef, p)
     L_exp, U_exp = _closed_form_bounds(0.6, 0.3, 0.7)
-    # ECOS default tolerance is ~1e-7, but 128-var LPs accumulate ~1e-5 error;
-    # match the paper's own "solver tolerance" convention.
+    # LP solver tolerances can accumulate on larger lifted formulations; match
+    # the paper's own "solver tolerance" convention.
     assert abs(lb - L_exp) < 1e-4
     assert abs(ub - U_exp) < 1e-4
 

@@ -39,15 +39,18 @@ pip install -e ".[dev]"
 users who prefer a requirements file. The recommended development install is
 still `pip install -e ".[dev]"`.
 
-For the exact package versions recorded in the committed stable timing
-metadata, use Python 3.11.x and:
+The default install uses CVXPY with non-ECOS solvers for ordinary library use and
+tests. ECOS is needed only to regenerate the paper timing experiments under the
+same solver used in the committed artifacts. For that reproduction environment,
+use Python 3.11.x and:
 
 ```bash
-pip install -e ".[dev]" -r requirements-repro.txt
+pip install -e ".[dev,repro]" -r requirements-repro.txt
 ```
 
 Those pins are intended for reproducing the paper timing tables. For normal
-library use, the dependency floors in `pyproject.toml` are less restrictive.
+library use, the dependency floors in `pyproject.toml` are less restrictive and
+do not require ECOS.
 
 ## Quick Check
 
@@ -134,6 +137,10 @@ the more modest end-to-end wall-clock speedup for the small running example.
 For a local smoke run, use one seed and allow non-SLURM execution:
 
 ```bash
+pip install -e ".[repro]"
+```
+
+```bash
 python experiments/paper_stress_scaling/run_stable.py \
   --seed 42 --allow-busy --n-repeats 25 --out-dir experiments/paper_stress_scaling/results_stable
 
@@ -203,4 +210,6 @@ tests/               pytest suite
 ## License
 
 This repository is released under the MIT License. See `LICENSE`.
-Runtime and reproduction dependencies retain their upstream licenses.
+Runtime and reproduction dependencies retain their upstream licenses. In
+particular, ECOS is used only for paper timing reproduction and is installed via
+the optional `repro` extra or `requirements-repro.txt`.

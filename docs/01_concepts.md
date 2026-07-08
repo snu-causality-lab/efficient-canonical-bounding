@@ -222,7 +222,7 @@ $$
 \overline{\mathcal{Q}}(p) = \max_{\psi \in \Delta(\Omega_{\mathrm{full}})} c^\top \psi \ \ \text{s.t.} \ M\psi = p.
 $$
 
-Both are standard LPs. We solve with CVXPY (ECOS primary, SCS backup) and cache the problem with `cp.Parameter` to make repeated $p$-sweeps fast.
+Both are standard LPs. We solve with CVXPY (CLARABEL primary, SCS backup by default; ECOS for paper timing reproduction) and cache the problem with `cp.Parameter` to make repeated $p$-sweeps fast.
 
 ---
 

@@ -28,7 +28,6 @@ classifiers = [
 dependencies = [
     "numpy>=1.26",
     "cvxpy>=1.5",
-    "ecos>=2.0",
     "scs>=3.2",
     "matplotlib>=3.8",
 ]
@@ -41,6 +40,9 @@ Repository = "https://github.com/snu-causality-lab/efficient-canonical-bounding"
 Issues = "https://github.com/snu-causality-lab/efficient-canonical-bounding/issues"
 
 [project.optional-dependencies]
+repro = [
+    "ecos>=2.0",
+]
 dev = [
     "pytest>=8",
     "pytest-cov>=5",
