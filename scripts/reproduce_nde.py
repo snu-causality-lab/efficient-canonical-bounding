@@ -1,4 +1,4 @@
-"""Reproduce the 1086 NDE L_{2.5} running example end-to-end.
+"""Reproduce the paper NDE L_{2.5} running example end-to-end.
 
 This script is the canonred analog of the legacy
 `allinone_posterior_visuals_cached.py`. It reproduces:
@@ -10,7 +10,7 @@ This script is the canonred analog of the legacy
      saved per n.
   3. Regime I (binomial 3-arm): allocation-augmented Gibbs; same propagation
      and histograms.
-  4. Solver-time comparison (Table 1 analog): 8-state vs 128-state median
+  4. Solver-time comparison (Table 3 analog): 8-state vs 128-state median
      `solve_time` over K posterior draws per n.
 
 Outputs (under `scripts/outputs/nde/`):

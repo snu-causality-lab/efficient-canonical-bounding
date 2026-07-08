@@ -18,6 +18,6 @@ PY=${PYTHON_BIN:-python}
 SEED=${SLURM_ARRAY_TASK_ID}
 
 echo "[slurm] node=$(hostname) seed=$SEED job=${SLURM_JOB_ID}"
-cd "$ROOT/experiments/reb_named_fixtures"
+cd "$ROOT/experiments/named_graphs"
 "$PY" run_stable.py --seed "$SEED" --require-slurm --n-repeats 25 --out-dir results_stable
 echo "[slurm] done seed=$SEED"

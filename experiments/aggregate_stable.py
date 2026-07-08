@@ -158,7 +158,7 @@ def main() -> None:
                   f"8-state {_fmt(cols[f'dim{dim}_med_8_ms'], 4)}")
 
     # ---- named fixtures (per-graph, P_obs) ----
-    named = _load(str(HERE / "reb_named_fixtures" / args.results_name /
+    named = _load(str(HERE / "named_graphs" / args.results_name /
                       "named_fixtures_stable_seed*.csv"))
     if named:
         byfix: dict[str, list] = {}

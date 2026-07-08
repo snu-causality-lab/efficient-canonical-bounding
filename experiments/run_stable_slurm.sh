@@ -24,7 +24,7 @@ echo "[slurm] node=$(hostname) seed=$SEED job=${SLURM_JOB_ID} array=${SLURM_ARRA
 cd "$ROOT/experiments/paper_stress_scaling"
 "$PY" run_stable.py --seed "$SEED" --require-slurm --n-repeats 25 --out-dir results_stable
 
-# Posterior sweep (Table 3/4 timing + Fig 3/5/7 data) — S=10000 for smooth figures.
+# Posterior sweep (Table 3/4 timing + Fig 3/5/6/7 data) — S=10000 for smooth figures.
 cd "$ROOT/experiments/paper_posterior_sweep"
 "$PY" run_stable.py --seed "$SEED" --require-slurm --S 10000 --burn 5000 \
       --n-repeats 25 --out-dir results_stable

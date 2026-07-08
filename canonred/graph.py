@@ -1,7 +1,7 @@
 """ADMG (acyclic directed mixed graph) primitives.
 
-See docs/01_concepts.md §1 for the formalism and docs/03_modules.md §2 for the
-API plan. Every method here is pure (returns new objects), the ADMG class is
+See docs/01_concepts.md §1 for the formalism. Every method here is pure
+(returns new objects), and the ADMG class is
 immutable and hashable.
 """
 

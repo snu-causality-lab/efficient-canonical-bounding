@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=1086_stress
+#SBATCH --job-name=canonred-stress
 #SBATCH --output=slurm-%j.out
 #SBATCH --error=slurm-%j.err
 #SBATCH --cpus-per-task=8

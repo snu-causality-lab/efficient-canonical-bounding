@@ -9,8 +9,10 @@ Each figure: 2-level uncertainty — inner band = pooled posterior (across all d
 seeds); outer band = reproducibility (5-95% across per-seed medians). Colorblind-safe
 (Okabe-Ito), serif fonts, vector PDF, no plt.show(), no global rc leak.
 
-Run directly to regenerate every figure:
-  python canonred/figviz.py --in-dir <results_stable> --out-dir <figures>
+Run directly to regenerate the posterior figures and/or Figure 8:
+  python -m canonred.figviz --in-dir <results_stable> --out-dir <figures>
+  python -m canonred.figviz --out-dir <figures> \
+    --pobs-csv experiments/pobs_safe_quotient/pobs_discrepancy.csv
 """
 
 from __future__ import annotations
@@ -292,14 +294,24 @@ def plot_pobs_discrepancy(csv_path, out_path, *, tol=1e-8) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--in-dir", required=True, help="results_stable dir with fig{3,5,7} shards")
     ap.add_argument("--out-dir", required=True, help="figures/ dir to write PDFs into")
+    ap.add_argument("--in-dir", default=None,
+                    help="optional results_stable dir with fig{3,5,7} shards")
+    ap.add_argument("--pobs-csv", default=None,
+                    help="optional pobs_discrepancy.csv for Figure 8")
     args = ap.parse_args()
-    ind, outd = Path(args.in_dir), Path(args.out_dir)
-    plot_posterior_grid(ind, outd / "posteriorQ_hist_grid_2x3_compare.pdf")
-    plot_bounds_bands_vs_n(ind, outd / "bounds_bands_vs_n_compare.pdf")
-    plot_q_bands_vs_n(ind, outd / "q_bands_vs_n_compare.pdf")
-    plot_agreement_vs_n(ind, outd / "bounds_8_vs_128_agreement.pdf")
+    if not args.in_dir and not args.pobs_csv:
+        ap.error("provide --in-dir, --pobs-csv, or both")
+
+    outd = Path(args.out_dir)
+    if args.in_dir:
+        ind = Path(args.in_dir)
+        plot_posterior_grid(ind, outd / "posteriorQ_hist_grid_2x3_compare.pdf")
+        plot_bounds_bands_vs_n(ind, outd / "bounds_bands_vs_n_compare.pdf")
+        plot_q_bands_vs_n(ind, outd / "q_bands_vs_n_compare.pdf")
+        plot_agreement_vs_n(ind, outd / "bounds_8_vs_128_agreement.pdf")
+    if args.pobs_csv:
+        plot_pobs_discrepancy(Path(args.pobs_csv), outd / "pobs_safe_vs_queryonly.pdf")
     print("[figviz] done.")
 
 

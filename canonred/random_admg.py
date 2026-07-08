@@ -1,6 +1,6 @@
 """Seeded random semi-Markovian ADMG generator.
 
-Used by scripts/random_admg_sweep.py (U3kb rebuttal ablation). Generates ADMGs
+Used by scripts/random_admg_sweep.py for additional graph-variation checks. Generates ADMGs
 over n labelled nodes with independent directed-edge and bidirected-edge
 probabilities; guarantees at least one bidirected edge. No hidden semantics —
 just a sampler.

@@ -1,6 +1,6 @@
 """Reproducible, stabilized re-measurement of the NDE L_{2.5} posterior + runtime.
 
-Same outputs as run.py (Table 3/4, Fig 3/5/7) but with a hardened timing harness:
+Same outputs as run.py (Table 3/4, Fig 3/5/6/7) but with a hardened timing harness:
   - thread/BLAS pinning (set BEFORE numpy import, below)
   - ECOS tolerances pinned + strict (no silent SCS fallback)
   - batched amortized timing on a FIXED representative p (decoupled from

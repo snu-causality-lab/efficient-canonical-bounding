@@ -2,7 +2,7 @@
 
 This is the module that turns a CFQuery into its structural-expansion / edge-
 split representation and enumerates S_V(Q). Every expected number below is
-hand-derived from the paper (1086 §4.2) or from YB25 L_{2.5} semantics; cite in
+hand-derived from the paper (paper §4.2) or from YB25 L_{2.5} semantics; cite in
 the test docstring.
 
 Key concepts under test:
@@ -68,7 +68,7 @@ def w_x1():
 
 @pytest.fixture
 def nde_l25_query(nde, w_x0, w_x1):
-    """Q = P(Y_{0, W_1} = 1), paper 1086 running example."""
+    """Q = P(Y_{0, W_1} = 1), paper paper running example."""
     cf = CFVar.nested(
         base="Y",
         edge_worlds={
@@ -130,7 +130,7 @@ def test_splitnode_distinct_by_cfvar_index():
 
 
 def test_nde_l25_split_graph_has_four_nodes(nde, nde_l25_query):
-    """1086 §6 Case 2: Y_{0, W_1} has 4 split nodes: {Y, X[x0], W[x1], X[x1]}."""
+    """paper §6 Case 2: Y_{0, W_1} has 4 split nodes: {Y, X[x0], W[x1], X[x1]}."""
     gstar = edge_split_graph(nde, nde_l25_query)
     bases = {(n.base, n.label) for n in gstar.nodes}
     assert ("Y", "__root__0") in bases or any(n.base == "Y" for n in gstar.nodes)
@@ -246,7 +246,7 @@ def test_pns_x_values(pns, pns_query):
 
 
 def test_enumerate_contexts_nde_l25(nde, nde_l25_query):
-    """1086 §4.2: for Y_{0, W_1}, m_X=0, m_W=1, m_Y=2."""
+    """paper §4.2: for Y_{0, W_1}, m_X=0, m_W=1, m_Y=2."""
     S = enumerate_contexts(nde, nde_l25_query)
 
     # m_X = 0: X has no NON-FIXED split copies.

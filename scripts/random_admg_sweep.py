@@ -1,4 +1,4 @@
-"""Random ADMG ablation sweep (reviewer U3kb).
+"""Random ADMG sweep for graph-variation checks.
 
 For each (|V|, replicate) with |V| in a small range, sample a semi-Markovian
 ADMG and run:

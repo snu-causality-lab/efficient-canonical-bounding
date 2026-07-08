@@ -3,7 +3,6 @@
 Each experiment is a self-contained directory under `experiments/` with:
   - `run.py`      entry script (writes CSVs in cwd)
   - `sbatch.sh`   slurm launcher
-  - `notes.md`    purpose + parameters + known caveats
 
 Slurm convention for the release scripts:
   - submit from an installed checkout, or set PYTHON_BIN to the intended Python

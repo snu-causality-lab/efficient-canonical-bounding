@@ -1,8 +1,8 @@
 """Canonical domain reduction for partial counterfactual identification.
 
-Implements the 1086 UAI 2026 paper "Canonical Domain Reduction for Partial
+Implements the UAI 2026 paper "Canonical Domain Reduction for Partial
 Counterfactual Identification" on a clean foundation. See ``docs/01_concepts.md``
-for the formalism and ``docs/03_modules.md`` for per-module roles.
+for the formalism and the repository README for reproducibility instructions.
 
 Public API (stable names):
 

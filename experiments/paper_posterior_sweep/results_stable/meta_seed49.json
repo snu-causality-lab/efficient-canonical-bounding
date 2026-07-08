@@ -48,7 +48,7 @@
       0.83837890625
     ],
     "load_per_core_1m": 0.023752848307291668,
-    "slurm_job_id": "14804",
+    "slurm_job_id": "redacted",
     "busy": false
   },
   "provenance": {
@@ -68,7 +68,7 @@
       "ACCELERATE_MAXIMUM_THREADS": "1"
     },
     "slurm": {
-      "SLURM_JOB_ID": "14804",
+      "SLURM_JOB_ID": "redacted",
       "SLURM_CPUS_PER_TASK": null,
       "SLURM_JOB_NODELIST": "redacted-node"
     },

@@ -1,7 +1,7 @@
 """Unit tests for canonred.graph.
 
 All expected values here are either (a) easy hand checks, or (b) directly from
-the 1086 paper (see docstrings per test).
+the paper (see docstrings per test).
 """
 
 import pytest
@@ -67,7 +67,7 @@ def test_extra_cardinality_key_error():
 
 
 # ----------------------------------------------------------------------
-# NDE graph (1086 Fig. 2a)
+# NDE graph (paper Fig. 2a)
 # ----------------------------------------------------------------------
 
 
@@ -151,10 +151,9 @@ def test_iv_c_components():
 
 
 def test_iv_lifted_size():
-    """|Omega_full| for binary IV = 2^1 * 2^2 * 2^4 = 128 (same count as NDE)."""
+    """|Omega_full| for binary IV = 2^1 * 2^2 * 2^2 = 32."""
     g = iv_graph()
-    # Z: 2, X (parent Z): 4, Y (parent X): 4 -> 32. Hmm but paper says differently?
-    # Careful: response-fn count uses pa(V) only, not PA. X has 1 parent Z -> 2^2=4.
+    # Z has no parents -> 2. X has 1 parent Z -> 2^2=4.
     # Y has 1 parent X -> 2^2=4. Total 2*4*4=32.
     assert g.lifted_canonical_size() == 32
 
@@ -245,9 +244,8 @@ def test_pns_lifted_size():
 
     Paper natural_bound_app Table 'Graph 1 Worst-case (L3)' reports 128 via:
        X (2^1) × M (2^2) × Y (2^4)
-    where Y's response-fn count 2^4 = 2^{|Omega_X × Omega_M|} assumes Y has BOTH
-    X and M as parents. Confirmed by the author (2026-04-25) that the X->Y
-    directed edge is missing from the paper's TikZ by copy-paste mistake.
+    where Y's response-fn count 2^4 = 2^{|Omega_X × Omega_M|} assumes Y has both
+    X and M as parents.
     """
     g = pns_graph()
     assert g.lifted_canonical_size() == 128
@@ -261,7 +259,7 @@ def test_pns_lifted_size():
 def test_ternary_nde_structure():
     g = ternary_nde_graph()
     assert g.cardinality["M"] == 3
-    # With X->Y edge (added 2026-04-25 per paper-intended table numbers), Y has
+    # With X->Y edge (added 2026-04-25 per paper table numbers), Y has
     # both X and M as parents.
     assert set(g.parents("Y")) == {"X", "M"}
 
@@ -274,7 +272,7 @@ def test_ternary_nde_c_components():
 
 
 def test_ternary_nde_response_counts():
-    """Per-node response function counts with paper-intended X->Y edge.
+    """Per-node response function counts with paper X->Y edge.
 
     Z: no parents -> 2
     X: 1 parent (Z, binary) -> 2^2 = 4
