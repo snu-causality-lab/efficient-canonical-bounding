@@ -195,3 +195,7 @@ tests/               pytest suite
   year      = {2026}
 }
 ```
+
+## License
+
+This repository is released under the MIT License. See `LICENSE`.

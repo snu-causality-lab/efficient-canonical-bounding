@@ -1,4 +1,4 @@
-"""Additional experiment: random ADMG sweep (paper, ).
+"""Additional experiment: random ADMG sweep for graph-variation checks.
 
 For each (|V|, rep) sampled semi-Markovian ADMG:
   - Pick X = earliest non-sink with a directed path to Y = last topo node.

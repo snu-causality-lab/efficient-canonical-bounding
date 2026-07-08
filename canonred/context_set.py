@@ -10,7 +10,7 @@ Prop. 4.2 (realizable mixed-world queries):
   d_U(Q)  =  prod_{V in C(U)}  d_V ^ m_V(Q),
 
 with the product over c-components C of the ancestor-subgraph G[An(Q)].
-(See docs/01_concepts.md §A.4 for why this uses the original c-components
+(See docs/01_concepts.md §8 for why this uses the original c-components
 restricted to ancestors, not the post-do mutilated subgraph.)
 
 PCH worst-case cardinalities (analytic, query-independent):

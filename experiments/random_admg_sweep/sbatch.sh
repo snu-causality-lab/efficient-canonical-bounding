@@ -7,7 +7,7 @@
 #SBATCH --time=04:00:00
 #SBATCH --array=0-14
 
-# Random ADMG sweep for paper / .
+# Random ADMG sweep for graph-variation checks.
 # Array index encodes (size, rep):  idx = (size_idx * 5) + rep
 #   size_idx 0 -> |V|=4, idx 1 -> |V|=5, idx 2 -> |V|=6
 # Each task writes rand_admg_sweep_V${n}_rep${r}.csv to cwd.

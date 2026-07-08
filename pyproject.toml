@@ -7,6 +7,7 @@ name = "canonred"
 version = "0.0.1"
 description = "Canonical domain reduction for partial counterfactual identification."
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.11"
 keywords = [
     "causal-inference",

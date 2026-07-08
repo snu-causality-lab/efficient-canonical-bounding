@@ -44,5 +44,4 @@ the final paper table numbers are governed by the stable shards listed above.
 - Scheduler scripts are templates. Public users should set `PYTHON_BIN` and
   `REPO_ROOT` as needed, and add cluster-specific output paths or node
   constraints before running them.
-- No open-source license has been selected in this release candidate yet. Choose
-  a license before making the repository public.
+- The repository includes an MIT license at the project root.

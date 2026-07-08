@@ -245,9 +245,8 @@ def test_pns_lifted_size():
 
     Paper natural_bound_app Table 'Graph 1 Worst-case (L3)' reports 128 via:
        X (2^1) × M (2^2) × Y (2^4)
-    where Y's response-fn count 2^4 = 2^{|Omega_X × Omega_M|} assumes Y has BOTH
-    X and M as parents. Confirmed by the author (2026-04-25) that the X->Y
-    directed edge is missing from the paper's TikZ by copy-paste mistake.
+    where Y's response-fn count 2^4 = 2^{|Omega_X × Omega_M|} assumes Y has both
+    X and M as parents.
     """
     g = pns_graph()
     assert g.lifted_canonical_size() == 128
